@@ -1,0 +1,175 @@
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
+
+const resources = {
+  de: {
+    translation: {
+      "nav.services": "Leistungen",
+      "nav.portfolio": "Portfolio",
+      "nav.contact": "Kontakt",
+      "hero.title": "Professionelle Fassaden- und Yachtrestaurierung",
+      "hero.subtitle": "Experten für die Reparatur und Restaurierung von Fassaden und Yachten – Präzision und Qualität in jeder Dimension",
+      "hero.cta": "Beratung anfordern",
+      "services.title": "Unsere Leistungen",
+      "services.coating.title": "Beschichtungen",
+      "services.coating.description": "Wir bieten hochwertige Beschichtungen für Fassaden und Dächer an. Unsere Beschichtungen verleihen Oberflächen ein frisches Aussehen und bieten langanhaltenden Schutz vor Umwelteinflüssen.",
+      "services.panels.title": "Fassadenplatten-Reparatur",
+      "services.panels.description": "Professionelle Wiederherstellung beschädigter Aluminium- und Metallfassadenplatten, Sandwichplatten, Dämmplatten und Trapezbleche. Wir verwenden modernste Technologien für unsichtbare Reparaturen.",
+      "services.windows.title": "Aluminiumfenster-Reparatur",
+      "services.windows.description": "Vollständige Restaurierung beschädigter Aluminiumfensterrahmen, Wiederherstellung der ursprünglichen Ästhetik und Funktionalität.",
+      "services.doors.title": "Sektionaltorreparatur",
+      "services.doors.description": "Wir bieten die Wiederherstellung beschädigter Sektionaltore und garantieren deren zuverlässige Funktion und attraktives Aussehen.",
+      "services.cleaning.title": "Fassadenreinigung",
+      "services.cleaning.description": "Effektive professionelle Reinigung von Fassaden von jeglichen Verschmutzungen wie Rost, Zement, Kleberückständen und Ablagerungen. Wir helfen Ihrem Gebäude, wieder frisch und gepflegt auszusehen.",
+      "services.damage.title": "Schadenreparatur",
+      "services.damage.description": "Wir beheben Schäden an Fassaden und Dächern von Gebäuden durch Hagel, Vandalismus, Graffiti, Werbeschäden, Delaminierung und Ausbleichung. Unser Expertenteam verwendet neueste Technologien und Materialien.",
+      "services.renovation.title": "Gebäuderenovierung",
+      "services.renovation.description": "Wir führen umfassende Renovierungs- und Modernisierungsarbeiten an Fassaden und Dächern von Gewerbeimmobilien durch. Wir bieten regelmäßige Wartung, Erneuerung und Austausch von Verkleidungselementen.",
+      "services.yacht.title": "Yachtreparatur und -veredelung",
+      "services.yacht.description": "Professionelle Reparatur und Restaurierung von Yacht- und Bootsrümpfen. Wir gewährleisten höchste Qualität durch den Einsatz von Spezialausrüstung und Materialien für ein perfektes Erscheinungsbild.",
+      "portfolio.title": "Unsere Projekte",
+      "project.label": "Projekt",
+      "contact.title": "Kontaktieren Sie uns",
+      "contact.info": "Kontaktinformationen",
+      "contact.name": "Ihr Name",
+      "contact.phone": "Telefon",
+      "contact.message": "Nachricht",
+      "contact.send": "Nachricht senden",
+      "contact.sending": "Wird gesendet...",
+      "contact.success": "Nachricht erfolgreich gesendet!",
+      "contact.error": "Fehler beim Senden der Nachricht. Bitte versuchen Sie es später erneut.",
+      "footer.rights": "Alle Rechte vorbehalten."
+    }
+  },
+  en: {
+    translation: {
+      "nav.services": "Services",
+      "nav.portfolio": "Portfolio",
+      "nav.contact": "Contact",
+      "hero.title": "Professional Facade and Yacht Restoration",
+      "hero.subtitle": "Experts in repair and restoration of facades and yachts - precision and quality in every dimension",
+      "hero.cta": "Request Consultation",
+      "services.title": "Our Services",
+      "services.coating.title": "Coating",
+      "services.coating.description": "We offer high-quality coatings for facades and roofs. Our coatings give surfaces a fresh appearance and provide long-lasting protection against environmental influences.",
+      "services.panels.title": "Facade Panel Repair",
+      "services.panels.description": "Professional restoration of damaged aluminum and metal facade panels, sandwich panels, insulation panels, and trapezoidal sheets. We use state-of-the-art technologies for invisible repairs.",
+      "services.windows.title": "Aluminum Window Repair",
+      "services.windows.description": "Complete restoration of damaged aluminum window frames, restoring original aesthetics and functionality.",
+      "services.doors.title": "Sectional Door Repair",
+      "services.doors.description": "We offer restoration of damaged sectional doors and guarantee their reliable function and attractive appearance.",
+      "services.cleaning.title": "Facade Cleaning",
+      "services.cleaning.description": "Effective professional cleaning of facades from any contamination such as rust, cement, adhesive residues, and deposits. We help your building look fresh and well-maintained again.",
+      "services.damage.title": "Damage Repair",
+      "services.damage.description": "We repair damage to building facades and roofs caused by hail, vandalism, graffiti, advertising damage, delamination, and fading. Our expert team uses the latest technologies and materials.",
+      "services.renovation.title": "Building Renovation",
+      "services.renovation.description": "We carry out comprehensive renovation and modernization work on facades and roofs of commercial properties. We offer regular maintenance, renewal, and replacement of cladding elements.",
+      "services.yacht.title": "Yacht Repair and Refinishing",
+      "services.yacht.description": "Professional repair and restoration of yacht and boat hulls. We ensure the highest quality through the use of specialized equipment and materials for a perfect appearance.",
+      "portfolio.title": "Our Projects",
+      "project.label": "Project",
+      "contact.title": "Contact Us",
+      "contact.info": "Contact Information",
+      "contact.name": "Your Name",
+      "contact.phone": "Phone",
+      "contact.message": "Message",
+      "contact.send": "Send Message",
+      "contact.sending": "Sending...",
+      "contact.success": "Message sent successfully!",
+      "contact.error": "Error sending message. Please try again later.",
+      "footer.rights": "All rights reserved."
+    }
+  },
+  fr: {
+    translation: {
+      "nav.services": "Services",
+      "nav.portfolio": "Portfolio",
+      "nav.contact": "Contact",
+      "hero.title": "Restauration Professionnelle de Façades et de Yachts",
+      "hero.subtitle": "Experts en réparation et restauration de façades et de yachts - précision et qualité dans chaque dimension",
+      "hero.cta": "Demander une Consultation",
+      "services.title": "Nos Services",
+      "services.coating.title": "Revêtements",
+      "services.coating.description": "Nous proposons des revêtements de haute qualité pour les façades et les toits. Nos revêtements donnent aux surfaces un aspect frais et offrent une protection durable contre les influences environnementales.",
+      "services.panels.title": "Réparation de Panneaux de Façade",
+      "services.panels.description": "Restauration professionnelle des panneaux de façade en aluminium et métal endommagés, panneaux sandwich, panneaux isolants et tôles trapézoïdales. Nous utilisons des technologies de pointe pour des réparations invisibles.",
+      "services.windows.title": "Réparation de Fenêtres en Aluminium",
+      "services.windows.description": "Restauration complète des cadres de fenêtres en aluminium endommagés, restauration de l'esthétique et de la fonctionnalité d'origine.",
+      "services.doors.title": "Réparation de Portes Sectionnelles",
+      "services.doors.description": "Nous proposons la restauration des portes sectionnelles endommagées et garantissons leur fonctionnement fiable et leur apparence attractive.",
+      "services.cleaning.title": "Nettoyage de Façades",
+      "services.cleaning.description": "Nettoyage professionnel efficace des façades de toute contamination comme la rouille, le ciment, les résidus d'adhésifs et les dépôts. Nous aidons votre bâtiment à retrouver un aspect frais et bien entretenu.",
+      "services.damage.title": "Réparation des Dommages",
+      "services.damage.description": "Nous réparons les dommages aux façades et aux toits des bâtiments causés par la grêle, le vandalisme, les graffitis, les dommages publicitaires, la délamination et la décoloration. Notre équipe d'experts utilise les dernières technologies et matériaux.",
+      "services.renovation.title": "Rénovation de Bâtiments",
+      "services.renovation.description": "Nous effectuons des travaux complets de rénovation et de modernisation sur les façades et les toits des propriétés commerciales. Nous proposons l'entretien régulier, le renouvellement et le remplacement des éléments de revêtement.",
+      "services.yacht.title": "Réparation et Finition de Yachts",
+      "services.yacht.description": "Réparation et restauration professionnelles des coques de yachts et de bateaux. Nous assurons la plus haute qualité grâce à l'utilisation d'équipements et de matériaux spécialisés pour une apparence parfaite.",
+      "portfolio.title": "Nos Projets",
+      "project.label": "Projet",
+      "contact.title": "Contactez-nous",
+      "contact.info": "Informations de Contact",
+      "contact.name": "Votre Nom",
+      "contact.phone": "Téléphone",
+      "contact.message": "Message",
+      "contact.send": "Envoyer le Message",
+      "contact.sending": "Envoi en cours...",
+      "contact.success": "Message envoyé avec succès !",
+      "contact.error": "Erreur lors de l'envoi du message. Veuillez réessayer plus tard.",
+      "footer.rights": "Tous droits réservés."
+    }
+  },
+  es: {
+    translation: {
+      "nav.services": "Servicios",
+      "nav.portfolio": "Portafolio",
+      "nav.contact": "Contacto",
+      "hero.title": "Restauración Profesional de Fachadas y Yates",
+      "hero.subtitle": "Expertos en reparación y restauración de fachadas y yates - precisión y calidad en cada dimensión",
+      "hero.cta": "Solicitar Consulta",
+      "services.title": "Nuestros Servicios",
+      "services.coating.title": "Revestimientos",
+      "services.coating.description": "Ofrecemos revestimientos de alta calidad para fachadas y techos. Nuestros revestimientos dan a las superficies un aspecto fresco y proporcionan una protección duradera contra las influencias ambientales.",
+      "services.panels.title": "Reparación de Paneles de Fachada",
+      "services.panels.description": "Restauración profesional de paneles de fachada de aluminio y metal dañados, paneles sándwich, paneles aislantes y chapas trapezoidales. Utilizamos tecnologías de última generación para reparaciones invisibles.",
+      "services.windows.title": "Reparación de Ventanas de Aluminio",
+      "services.windows.description": "Restauración completa de marcos de ventanas de aluminio dañados, restaurando la estética y funcionalidad original.",
+      "services.doors.title": "Reparación de Puertas Seccionales",
+      "services.doors.description": "Ofrecemos la restauración de puertas seccionales dañadas y garantizamos su funcionamiento fiable y apariencia atractiva.",
+      "services.cleaning.title": "Limpieza de Fachadas",
+      "services.cleaning.description": "Limpieza profesional efectiva de fachadas de cualquier contaminación como óxido, cemento, residuos adhesivos y depósitos. Ayudamos a que su edificio vuelva a lucir fresco y bien mantenido.",
+      "services.damage.title": "Reparación de Daños",
+      "services.damage.description": "Reparamos daños en fachadas y techos de edificios causados por granizo, vandalismo, grafitis, daños publicitarios, delaminación y decoloración. Nuestro equipo de expertos utiliza las últimas tecnologías y materiales.",
+      "services.renovation.title": "Renovación de Edificios",
+      "services.renovation.description": "Realizamos trabajos integrales de renovación y modernización en fachadas y techos de propiedades comerciales. Ofrecemos mantenimiento regular, renovación y reemplazo de elementos de revestimiento.",
+      "services.yacht.title": "Reparación y Acabado de Yates",
+      "services.yacht.description": "Reparación y restauración profesional de cascos de yates y barcos. Garantizamos la más alta calidad mediante el uso de equipos y materiales especializados para una apariencia perfecta.",
+      "portfolio.title": "Nuestros Proyectos",
+      "project.label": "Proyecto",
+      "contact.title": "Contáctenos",
+      "contact.info": "Información de Contacto",
+      "contact.name": "Su Nombre",
+      "contact.phone": "Teléfono",
+      "contact.message": "Mensaje",
+      "contact.send": "Enviar Mensaje",
+      "contact.sending": "Enviando...",
+      "contact.success": "¡Mensaje enviado con éxito!",
+      "contact.error": "Error al enviar el mensaje. Por favor, inténtelo de nuevo más tarde.",
+      "footer.rights": "Todos los derechos reservados."
+    }
+  }
+};
+
+i18n
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .init({
+    resources,
+    fallbackLng: 'de',
+    interpolation: {
+      escapeValue: false
+    }
+  });
+
+export default i18n;
