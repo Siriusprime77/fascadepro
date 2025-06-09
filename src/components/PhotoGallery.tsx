@@ -63,7 +63,7 @@ export function PhotoGallery({ images, isOpen, onClose, initialIndex }: PhotoGal
         <img
           src={images[currentIndex]}
           alt={`Gallery image ${currentIndex + 1}`}
-          className="max-w-full max-h-[90vh] object-contain"
+          className="max-w-[95vw] max-h-[95vh] object-contain"
         />
 
         {/* Image counter */}
