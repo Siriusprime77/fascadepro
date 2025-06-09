@@ -111,9 +111,6 @@ function App() {
     // Other projects with placeholder images
     ["https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&q=80"],
     ["https://images.unsplash.com/photo-1464146072230-91cabc968266?auto=format&fit=crop&q=80"],
-    ["https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80"],
-    ["https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80"],
-    ["https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?auto=format&fit=crop&q=80"]
   ];
 
   const portfolioImages = [
