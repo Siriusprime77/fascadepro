@@ -29,25 +29,31 @@ export function PhotoGallery({ images, isOpen, onClose, initialIndex }: PhotoGal
 
   return (
     <div
-      className="relative w-screen h-screen flex items-center justify-center"
-      onClick={(e) => e.stopPropagation()}
+      className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center"
+      onClick={onClose}
+      onKeyDown={handleKeyDown}
+      tabIndex={0}
     >
-      {/* Close button */}
-      <button
-        onClick={onClose}
-        className="absolute top-4 right-4 z-10 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-colors"
+      <div
+        className="relative w-screen h-screen flex items-center justify-center"
+        onClick={(e) => e.stopPropagation()}
       >
-        <X className="w-6 h-6" />
-      </button>
-    
-      {/* Previous button */}
-      <button
-        onClick={goToPrevious}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-colors"
-      >
-        <ChevronLeft className="w-6 h-6" />
-      </button>
-
+        {/* Close button */}
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 z-10 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-colors"
+        >
+          <X className="w-6 h-6" />
+        </button>
+  
+        {/* Previous button */}
+        <button
+          onClick={goToPrevious}
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-colors"
+        >
+          <ChevronLeft className="w-6 h-6" />
+        </button>
+  
         {/* Next button */}
         <button
           onClick={goToNext}
@@ -55,19 +61,20 @@ export function PhotoGallery({ images, isOpen, onClose, initialIndex }: PhotoGal
         >
           <ChevronRight className="w-6 h-6" />
         </button>
-
+  
         {/* Main image */}
         <img
           src={images[currentIndex]}
           alt={`Gallery image ${currentIndex + 1}`}
-          className="max-w-[95vw] max-h-[95vh] object-contain"
+          className="object-contain"
+          style={{ maxWidth: '95vw', maxHeight: '95vh' }}
         />
-
+  
         {/* Image counter */}
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 text-white px-4 py-2 rounded-full">
           {currentIndex + 1} / {images.length}
         </div>
-
+  
         {/* Thumbnail navigation */}
         <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 flex gap-2 max-w-full overflow-x-auto px-4">
           {images.map((image, index) => (
