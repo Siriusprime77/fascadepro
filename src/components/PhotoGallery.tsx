@@ -34,7 +34,7 @@ export function PhotoGallery({ images, isOpen, onClose, initialIndex }: PhotoGal
       onKeyDown={handleKeyDown}
       tabIndex={0}
     >
-      <div className="relative max-w-7xl max-h-full mx-4" onClick={(e) => e.stopPropagation()}>
+      <div className="relative w-screen h-screen flex items-center justify-center">
         {/* Close button */}
         <button
           onClick={onClose}
