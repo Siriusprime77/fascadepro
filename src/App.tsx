@@ -161,17 +161,13 @@ function App() {
         <div className="relative z-10 flex flex-col justify-center h-full max-w-4xl mx-auto px-8">
           <h1 className="text-6xl font-bold mb-6 drop-shadow-lg">{t('hero.title')}</h1>
           <p className="text-xl mb-8 text-gray-300">{t('hero.subtitle')}</p>
-          <button className="bg-red-600 text-white px-8 py-4 rounded-lg w-fit hover:bg-red-700 transition-colors flex items-center gap-2">
-            {t('hero.cta')}
-            <ChevronRight className="w-5 h-5" />
-          </button>
-          <a
-            href="mailto:algis0189@gmail.com?subject=Beratung%20anfordern&body=Sehr%20geehrtes%20Team,%0Aich%20interessiere%20mich%20für%20eine%20Beratung.%20Bitte%20kontaktieren%20Sie%20mich.%0A%0AMit%20freundlichen%20Grüßen,%0A[Ihr%20Name]"
-            className="mt-4 inline-block bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors"
-          >
-            Beratung anfordern
-          </a>
-          
+           <a
+             href="mailto:algis0189@gmail.com?subject=Beratung%20anfordern&body=Sehr%20geehrtes%20Team,%0Aich%20interessiere%20mich%20für%20eine%20Beratung.%20Bitte%20kontaktieren%20Sie%20mich.%0A%0AMit%20freundlichen%20Grüßen,%0A[Ihr%20Name]"
+             className="bg-red-600 text-white px-8 py-4 rounded-lg w-fit hover:bg-red-700 transition-colors flex items-center gap-2"
+           >
+             {t('hero.cta')}
+             <ChevronRight className="w-5 h-5" />
+           </a>
         </div>
       </header>
 
