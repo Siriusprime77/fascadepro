@@ -28,28 +28,25 @@ export function PhotoGallery({ images, isOpen, onClose, initialIndex }: PhotoGal
   };
 
   return (
-    <div 
-      className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center"
-      onClick={onClose}
-      onKeyDown={handleKeyDown}
-      tabIndex={0}
+    <div
+      className="relative w-screen h-screen flex items-center justify-center"
+      onClick={(e) => e.stopPropagation()}
     >
-      <div className="relative w-screen h-screen flex items-center justify-center">
-        {/* Close button */}
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 z-10 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-colors"
-        >
-          <X className="w-6 h-6" />
-        </button>
-
-        {/* Previous button */}
-        <button
-          onClick={goToPrevious}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-colors"
-        >
-          <ChevronLeft className="w-6 h-6" />
-        </button>
+      {/* Close button */}
+      <button
+        onClick={onClose}
+        className="absolute top-4 right-4 z-10 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-colors"
+      >
+        <X className="w-6 h-6" />
+      </button>
+    
+      {/* Previous button */}
+      <button
+        onClick={goToPrevious}
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-colors"
+      >
+        <ChevronLeft className="w-6 h-6" />
+      </button>
 
         {/* Next button */}
         <button
